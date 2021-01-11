@@ -1,0 +1,51 @@
+<html>
+<head>
+	<title>HCI Assignment </title>
+</head>
+<div style="background-color:grey;background: url('vhoa0.jpg')no-repeat center center fixed; -webkit-background-size:cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover; height:100%" ><br>
+	<body style="margin: 5px; "><center>
+		
+		<div id="background"><br>
+			<p style="font-size: 150%"><b><i> You have  <span id="countdowntimer">10 </span> Seconds Remaining</b></i></p>
+			<div id="mydiv1" style="font-size: 130%; font-weight: bold; color: pink " >
+				CAT
+			</div><br><br>
+			<div id="mydiv2" style="font-size: 130%; font-weight: bold; color: white; ">
+				DOG
+			</div><br><br>
+			<div id="mydiv3" style="font-size: 130%; font-weight: bold; color:bisque">
+				ELEPHANT
+			</div><br><br>
+			<div id="mydiv4" style="font-size: 130%; font-weight: bold; color:navy">
+				RABBIT
+			</div><br><br>
+			<div id="mydiv5" style="font-size: 130%; font-weight: ; color :lightcyan">
+				PYRENEAN
+			</div><br><br>
+			<div id="mydiv6" style="font-size: 130%; font-weight: bold; color:floralwhite ">
+				LION
+			</div><br><br>
+			<div id="mydiv7" style="font-size: 130%; font-weight: bold; color:goldenrod">
+				TIGER
+			</div><br><br>
+			<div id="mydiv8" style="font-size: 130%; font-weight: bold; color:cyan">
+				PANDA
+			</div>
+		</div><br><br><br> 
+	</center>
+</body></div>
+<script type="text/javascript">
+			var timeleft = 10;
+			var downloadTimer = setInterval(function(){
+				timeleft--;
+				document.getElementById("countdowntimer").textContent = timeleft;
+
+				if(timeleft <= 0)
+					window.location='third.html';
+			},1000);
+
+		</script>
+</html>
+
+
+

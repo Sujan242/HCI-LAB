@@ -1,0 +1,227 @@
+<html>
+<head>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<title>HCI Assignment</title>
+
+
+<body  style="background-color:grey;background: url('vhoa0.jpg')no-repeat center center fixed; -webkit-background-size:cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover; height:100% ; ">
+	
+	<script type="text/javascript">
+		
+        
+		var myarray= [false,false,false,false,false,false,false,false,false,false,false,false];
+		var ans = [true,false,true,false,true,true,true,true,false,true,true,false]; //answer stored in this array as true
+		
+		// var num_correc
+		function myfunction1(i)								/*function for selection and deselection*/
+		{	
+			if(myarray[i]){		
+                                myarray[i]=false;
+                                document.getElementById('mydiv'+(i+1)).setAttribute("class", "old");
+                        } else{
+                                myarray[i]=true;
+                                document.getElementById('mydiv'+(i+1)).setAttribute("class", "new");
+                        }
+		}
+
+		function myfunction2()						/*function to be called after clicking done*/
+		{
+
+            var count = 0;
+            var num_correc = 0;
+			for(var i=0; i<12; i++){
+                myarray[i] == true? ++count: count;
+                if(myarray[i] && ans[i])
+                {
+                	++num_correc;
+                }
+                // myarray[i]==ans[i] && myarray[i]=true ? ++num_correc:num_correc;
+			}
+			
+			if(count>8){
+                alert('You should select 8 animals');
+			} else {
+                    
+                    	for(var i=0;i<12;i++){ 
+                    	if(!ans[i]){
+                        document.getElementById('mydiv'+(i+1)).outerHTML="";}	/*condition to remove the color sets that are false in ans array from the page*/
+                        else{
+                        document.getElementById('mydiv'+(i+1)).removeAttribute("onclick");/*condition so that the color sets cannot be selected after clicking 																																Done button*/
+                        if (document.getElementById('mydiv'+(i+1)).parentNode==document.getElementById('pos2')) {document.getElementById('pos1').appendChild(document.getElementById('mydiv'+(i+1)));}	/*condition to append color sets from pos2 with pos1 so that they come in a single row*/
+                        changetext();
+                        showbtn();
+                        showsets();
+                        }
+                   }
+                    	
+                }
+                alert("Congratulations you recalled "+ num_correc*100/8.0+ "% of the Animals Correct")
+			
+			
+		}function changetext()
+			{
+				
+
+				
+				document.getElementById("test").value = document.getElementById("para").innerHTML; /*appends paragraph of id test with paragraph of id para after 																										clicking done*/
+				document.getElementById('test').setAttribute("class","hide");			/*hides paragraph of id test after clicking done*/
+				
+				
+
+			}
+		function showbtn()
+		{
+			document.getElementById('button2').setAttribute("class","show");   /*shows the hidden button of id button2*/
+
+			document.getElementById('para').setAttribute("class","show")	/*shows the hidden paragraph of id para*/
+		}
+		function showsets()
+		{
+			if(myarray[0]==true && myarray[2]==true && myarray[4]==true && myarray[5]==true && myarray[6]==true && myarray[7]==true && myarray[9]==true)
+			{
+				document.getElementById('para2').setAttribute("class","show");/*displays para2 and hide the other paragraphs when all the color sets are selected*/
+			}
+			else if(myarray[0]==true && myarray[2]==true && myarray[4]==true){ /*displays para1 when color sets at position 0,2 & 4 are selected*/
+				
+			
+				document.getElementById('para1').setAttribute("class","show");
+			
+				}
+			else if(myarray[0]==false && myarray[2]==false && myarray[4]==false && myarray[5]==false && myarray[6]==false && myarray[7]==false && myarray[9]==false){																/*displays para3 when none of the color sets are selected*/
+				
+				
+					document.getElementById('para3').setAttribute("class","show");
+				
+			}
+			else if(myarray[0]==true && myarray[2]==true && myarray[4]==true && myarray[5]==true && myarray[6]==true)/*displays para1 when color sets at position 																												0,2,4,5,6 are selected,similarly the 																																			others*/
+			{
+				document.getElementById('para1').setAttribute("class","show");
+			}
+			else if(myarray[0]==true)
+			{
+				document.getElementById('para1').setAttribute("class","show");
+			}
+			else if(myarray[2]==true)
+			{
+				document.getElementById('para4').setAttribute("class","show");
+			}
+			else if(myarray[4]==true)
+			{
+				document.getElementById('para4').setAttribute("class","show");
+			}
+			else if(myarray[5]==true)
+			{
+				document.getElementById('para4').setAttribute("class","show");
+			}
+			else if(myarray[6]==true)
+			{
+				document.getElementById('para4').setAttribute("class","show");
+			}
+			else if(myarray[7]==true)
+			{
+				document.getElementById('para1').setAttribute("class","show");
+			}
+			else if(myarray[9]==true)
+			{
+				document.getElementById('para1').setAttribute("class","show");
+			}
+			else if(myarray[0]==true && myarray[2]==true)
+			{
+				document.getElementById('para1').setAttribute("class","show");
+			}
+			else if(myarray[2]==true && myarray[4]==true)
+			{
+				document.getElementById('para4').setAttribute("class","show");
+			}
+		}
+	</script>
+
+	<div style="width: 700px; float: left; margin: 20px;position: fixed; color:white">
+		
+		<p id="test" style="font-size: 150%"><b><i>
+		EXPERIMENT INSTRUCTIONS:<br><br>
+		1. On the right is a list of animals, try to identify the animals which were in the list previously shown to you and memorized by you.
+		<br><br>
+		
+		2. You have to select by clicking on any animal.
+		<br><br>
+		3. If you wish to, you can deselect by clicking on the set once again. Avoid random guessing.
+		<br><br>
+		4. Since only 8 animals were shown, you need not select more than 8 animals, if you do so, it will show an error.<br><br><br><br>
+		After having completed the task, click on "Done" to see the results.
+	</i></b></p>
+		
+		<p id="para" class="hide" style="font-size: 150%; "><b><i>
+		On the right side is the list of words which were shown to you previously. The animals higlighted in green are the ones you recalled
+		<br><br></i></b></p>
+		<p id="para1" class="hide" style="font-size: 150%; "><b><i> As can be seen,you recalled more words from the top and bottom than the middle rows. This shows the consonance with the Serial Position Effect. This shows the infuence of the Serial Position Effect. 
+		<br><br></i></b></p>
+		<p id="para2" class="hide" style="font-size: 150% "><b><i>Congratulations,you have recalled all the 8 words correctly. Your memory and cognitive abilities are good. The Serial Position Effect could not have any effect in your case as you could recall hundred percent of the items.<br>(Disclaimer: There are chances that the words were selected clicking randomly without a real effort to recall, in which case the Serial Position Effect does not apply.)</i></b></p>
+		<p id="para3" class="hide" style="font-size: 150%"><b><i>It seems you were not able to recall any of the words correctly, please restart the experiment.</i></b></p>
+		<p id="para4" class="hide" style="font-size: 150%"><b><i>The recall results are not in confirmation with what the Serial Position Effect predicts. The possible reasons for interference could be:<br>
+		a) Dependency of recall on other factors such as familiarity with the animal<br>
+		b) Or personal bias to certain animals.<br>
+		c) Random selection </i></b></p>
+		
+	</div>
+
+	<div id="pos1" >
+   
+    	<div id="mydiv1" class="old" onclick="myfunction1(0)">
+			CAT 
+		</div>
+		<div id="mydiv2" class="old" onclick="myfunction1(1)">
+			PYTHON
+		</div>
+		<div id="mydiv3" class="old" onclick="myfunction1(2)">
+			DOG
+		</div>
+		<div id="mydiv4"  class="old" onclick="myfunction1(3)">
+			COBRA
+		</div>
+		<div id="mydiv5" class="old" onclick="myfunction1(4)">
+			ELEPHANT
+		</div>
+		<div id="mydiv6"  class="old" onclick="myfunction1(5)">
+			RABBIT
+		</div>
+		</div>
+
+
+
+	<div id="pos2" >
+		<div id="mydiv7"  class="old" onclick="myfunction1(6)">
+			PYRENEAN
+		</div>
+		<div id="mydiv8"  class="old" onclick="myfunction1(7)">
+			LION
+		</div>
+		<div id="mydiv9"  class="old" onclick="myfunction1(8)">
+			DEER
+		</div>
+		<div id="mydiv10" class="old" onclick="myfunction1(9)">
+			TIGER
+		</div>
+		<div id="mydiv11" class="old" onclick="myfunction1(10)">
+			PANDA
+		</div>
+		<div id="mydiv12" class="old" onclick="myfunction1(11)">
+			KANGAROO
+		</div>
+	</div>
+
+
+
+
+		 
+	</center>
+<div style="padding: 20px; margin: 20px; position: fixed; bottom: -50px;">
+			<input type="submit" id="button1" name="nxt" value="DONE" onclick="myfunction2();" style="width: 200px; height: 50px; font-size: 20px; margin: 25px; position: relative; right: -1050px;"/>
+			</div>
+<div style="padding: 20px; margin: 20px; position: fixed; bottom: -50px;">
+	<input type="submit" class="hide" id="button2" name="nxt" value="RESTART" onclick="window.location='index.html'"  style="width: 200px; height: 50px; font-size: 20px; margin: 25px; position: relative; right: -1050px;"/>
+</div>
+			
+</body><br><br>
+</html>

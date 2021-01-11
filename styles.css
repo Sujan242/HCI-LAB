@@ -1,0 +1,132 @@
+#pos1{							/*styling to align the divs from 1 to 6*/
+	width: 168px;
+	margin: 100px;
+	float: right;
+	position: relative;
+	left: -250px;
+}
+#pos2{							/*styling to align the divs from 7 to 12*/
+	width: 168px;
+	margin: 0px;
+	float: right;
+	position: relative;
+	right: -300px;
+	bottom: -100px;
+}
+
+
+#mydiv1 {						/*styling of the first color set*/
+    width:130px;
+    height:25px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 130%; font-weight: bold; color: pink;
+}
+
+#mydiv2 {						/*styling of the first color set*/
+    width:130px;
+    height:25px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 130%; font-weight: bold; color: black;
+}
+#mydiv3 {						/*styling of the first color set*/
+    width:130px;
+    height:25px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 130%; font-weight: bold; color: white;
+}
+#mydiv4 {						/*styling of the first color set*/
+    width:130px;
+    height:25px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 130%; font-weight: bold; color: black;
+}
+#mydiv5 {						/*styling of the first color set*/
+    width:130px;
+    height:25px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 130%; font-weight: bold; color: bisque ; 
+}
+#mydiv6 {						/*styling of the first color set*/
+    width:130px;
+    height:25px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 130%; font-weight: bold; color: navy;
+}
+#mydiv7 {						/*styling of the first color set*/
+    width:130px;
+    height:25px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 130%; font-weight: bold; color: lightcyan;
+}
+#mydiv8 {						/*styling of the first color set*/
+    width:130px;
+    height:25px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 130%; font-weight: bold; color: floralwhite;
+}
+#mydiv9 {						/*styling of the first color set*/
+    width:130px;
+    height:25px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 130%; font-weight: bold; color: black;
+}
+#mydiv10 {						/*styling of the first color set*/
+    width:130px;
+    height:25px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 130%; font-weight: bold; color: goldenrod
+}
+#mydiv11 {						/*styling of the first color set*/
+    width:130px;
+    height:25px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 130%; font-weight: bold; color: cyan;
+}
+#mydiv12 {						/*styling of the first color set*/
+    width:130px;
+    height:25px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 130%; font-weight: bold; color: black;
+}
+#para{								/*css class to position paragraph with id para*/
+	position: relative;
+	top: -500px;
+}
+#para1{								/*css class to position paragraph with id para1*/
+	position: relative;
+	top: -500px;
+}
+#para2{								/*css class to position paragraph with id para2*/
+	position: relative;
+	top: -500px;
+}
+#para3{								/*css class to position paragraph with id para3*/
+	position: relative;
+	top: -700px;
+}
+#para4{								/*css class to position paragraph with id para4*/
+	position: relative;
+	top: -800px;
+}
+.old{											/*css class to set border of the div to transparent*/
+	border:2px transparent;
+}												/*css class to set border of the div to solid black*/
+.new{
+	border: 2px solid black;
+    /*font-size:10;*/
+	background-color: green;
+}
+.hide{visibility: hidden;}
+.show{visibility: initial;}
